@@ -1,0 +1,214 @@
+mkdir katas4_ff_merge
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (master)
+$ cd katas4__ff_merge
+bash: cd: katas4__ff_merge: No such file or directory
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (master)
+$ ls
+'kata1-basic commits'/   kata2-basic-staging/   kata3_basic_branching/   katas4_ff_merge/
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (master)
+$ cd katas4_ff_merge
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ git branch feature/uppercase
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ switch feature/uppercase
+bash: switch: command not found
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ switch branch feature/uppercase
+bash: switch: command not found
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ git switch feature/uppercase
+Switched to branch 'feature/uppercase'
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (feature/uppercase)
+$ git status
+On branch feature/uppercase
+nothing to commit, working tree clean
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (feature/uppercase)
+$ echo "Greetings" > greeting.txt
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (feature/uppercase)
+$ echo "GREETINGS" >greeting.txt
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (feature/uppercase)
+$ git branch
+* feature/uppercase
+  master
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (feature/uppercase)
+$ git log --online --graph --all
+fatal: unrecognized argument: --online
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (feature/uppercase)
+$ git log --oneline --graph --all
+* 403154e (HEAD -> feature/uppercase, origin/master, master) Logs at Kata3 added
+* 1854d16 logs added
+* 1d4225c Name Added
+* 69b964a Logs added
+* 9566680 Final Commit
+* fcaac81 File Added
+* ff9ae86 adding logs
+* d93f432 hello world again commit
+* c9667ed Hello world again Commit
+* 97fe2e2 First Commit
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (feature/uppercase)
+$ git switch master
+Switched to branch 'master'
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ cat
+qq
+qq
+q
+q
+
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ cat greetings.txt
+cat: greetings.txt: No such file or directory
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ cat greeting.txt
+GREETINGS
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ git diff
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ git diff --staged
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ git branch -a
+  feature/uppercase
+* master
+  remotes/origin/master
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ./
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ git diff master feature/uppercase
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ git log --oneline --graph --all
+* 403154e (HEAD -> master, origin/master, feature/uppercase) Logs at Kata3 added
+* 1854d16 logs added
+* 1d4225c Name Added
+* 69b964a Logs added
+* 9566680 Final Commit
+* fcaac81 File Added
+* ff9ae86 adding logs
+* d93f432 hello world again commit
+* c9667ed Hello world again Commit
+* 97fe2e2 First Commit
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ git branch -a
+  feature/uppercase
+* master
+  remotes/origin/master
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ git merge feature/uppercase
+Already up to date.
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ ls
+greeting.txt
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ git branch -merged
+error: did you mean `--merged` (with two dashes)?
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ git branch --merged
+  feature/uppercase
+* master
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ git branch --merged
+  feature/uppercase
+* master
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ cat greeting.txt
+GREETINGS
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ git branch -d feature/uppercase
+Deleted branch feature/uppercase (was 403154e).
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ git branch -a
+* master
+  remotes/origin/master
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ git push origin master
+Everything up-to-date
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ git branch -a
+* master
+  remotes/origin/master
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ./
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ git add .
+warning: LF will be replaced by CRLF in katas4_ff_merge/greeting.txt.
+The file will have its original line endings in your working directory
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   greeting.txt
+
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ git push origin master
+Everything up-to-date
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ git commit -m "greetings updated"
+[master da6c5b3] greetings updated
+ 1 file changed, 1 insertion(+)
+ create mode 100644 katas4_ff_merge/greeting.txt
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 344 bytes | 172.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/thesuraj-zemoso/git-katas
+   403154e..da6c5b3  master -> master
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas4_ff_merge (master)
+$
