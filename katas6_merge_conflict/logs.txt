@@ -1,0 +1,260 @@
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (master)
+$ mkdir katas6_merge_conflict
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (master)
+$ cd katas6_merge_conflict
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (master)
+$ echo "" > calc.py
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ./
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (master)
+$ git add .
+warning: LF will be replaced by CRLF in katas6_merge_conflict/calc.py.
+The file will have its original line endings in your working directory
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (master)
+$ git commit -m "add declared"
+[master 7acb4cf] add declared
+ 1 file changed, 2 insertions(+)
+ create mode 100644 katas6_merge_conflict/calc.py
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (master)
+$ git branch addimple
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (master)
+$ git checkout addimple
+Switched to branch 'addimple'
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (addimple)
+$ git status
+On branch addimple
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   calc.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (addimple)
+$ git commit -m "add implementation"
+On branch addimple
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   calc.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (addimple)
+$ git add .
+warning: LF will be replaced by CRLF in katas6_merge_conflict/calc.py.
+The file will have its original line endings in your working directory
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (addimple)
+$ git commit -m "add implementation"
+[addimple 05144d7] add implementation
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (addimple)
+$ git switch master
+Switched to branch 'master'
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (master)
+$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> master
+
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (master)
+$ git pull remote origin
+fatal: 'remote' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (master)
+$ git pull origin
+You asked to pull from the remote 'origin', but did not specify
+a branch. Because this is not the default configured remote
+for your current branch, you must specify a branch on the command line.
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (master)
+$ git pull origin master
+From https://github.com/thesuraj-zemoso/git-katas
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (master)
+$ git branch -a 
+  addimple
+* master
+  remotes/origin/master
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (master)
+$ git diff addimple master
+diff --git a/katas6_merge_conflict/calc.py b/katas6_merge_conflict/calc.py
+index fd2b659..75fff92 100644
+--- a/katas6_merge_conflict/calc.py
++++ b/katas6_merge_conflict/calc.py
+@@ -1,2 +1,2 @@
+ def add(x,y):
+-    return x + y
++    pass
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (master)
+$ git diff master addimple
+diff --git a/katas6_merge_conflict/calc.py b/katas6_merge_conflict/calc.py
+index 75fff92..fd2b659 100644
+--- a/katas6_merge_conflict/calc.py
++++ b/katas6_merge_conflict/calc.py
+@@ -1,2 +1,2 @@
+ def add(x,y):
+-    pass
++    return x + y
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (master)
+$ git diff addimple..master
+diff --git a/katas6_merge_conflict/calc.py b/katas6_merge_conflict/calc.py
+index fd2b659..75fff92 100644
+--- a/katas6_merge_conflict/calc.py
++++ b/katas6_merge_conflict/calc.py
+@@ -1,2 +1,2 @@
+ def add(x,y):
+-    return x + y
++    pass
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (master)
+$ git diff addimple...master
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (master)
+$ git log addimple master
+commit 05144d7074ee76afbeca6d4526006750afae5e51 (addimple)
+Author: thesuraj-zemoso <suraj.kumar@zemosolabs.com>
+Date:   Wed Jan 5 11:20:13 2022 +0530
+
+    add implementation
+
+commit 7acb4cfe09aa73944974c1bd8864813093999d98 (HEAD -> master)
+Author: thesuraj-zemoso <suraj.kumar@zemosolabs.com>
+Date:   Wed Jan 5 11:18:58 2022 +0530
+
+    add declared
+
+commit c2aad3c59bdbe9b8bb3043b39cfb08835cef77a5 (origin/master)
+Author: thesuraj-zemoso <suraj.kumar@zemosolabs.com>
+Date:   Wed Jan 5 10:51:07 2022 +0530
+
+    logs at katas_5 added
+
+commit f20f454d802a92a8261986e037839459a7eba390
+Merge: a21267f 3348f18
+Author: thesuraj-zemoso <suraj.kumar@zemosolabs.com>
+Date:   Wed Jan 5 10:44:41 2022 +0530
+
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (master)
+$ git branch -a
+  addimple
+* master
+  remotes/origin/master
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (master)
+$ git merge addimpple
+merge: addimpple - not something we can merge
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (master)
+$ git merge addimple
+Updating 7acb4cf..05144d7
+Fast-forward
+ katas6_merge_conflict/calc.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (master)
+$ git push origin master
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (8/8), 649 bytes | 216.00 KiB/s, done.
+Total 8 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/thesuraj-zemoso/git-katas
+   c2aad3c..05144d7  master -> master
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (master)
+$ git log --oneline --graph
+* 05144d7 (HEAD -> master, origin/master, addimple) add implementation
+* 7acb4cf add declared
+* c2aad3c logs at katas_5 added
+*   f20f454 Merge branch 'greeting'
+|\
+| * 3348f18 Happy New Year added
+* | a21267f readme at katas5 added
+|/
+* 7828f43 adding logs at kata 4
+* da6c5b3 greetings updated
+* 403154e Logs at Kata3 added
+* 1854d16 logs added
+* 1d4225c Name Added
+* 69b964a Logs added
+* 9566680 Final Commit
+* fcaac81 File Added
+* ff9ae86 adding logs
+* d93f432 hello world again commit
+* c9667ed Hello world again Commit
+* 97fe2e2 First Commit
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (master)
+$ git log --oneline --graph all
+fatal: ambiguous argument 'all': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (master)
+$ git log --oneline --graph --all
+* 05144d7 (HEAD -> master, origin/master, addimple) add implementation
+* 7acb4cf add declared
+* c2aad3c logs at katas_5 added
+*   f20f454 Merge branch 'greeting'
+|\
+| * 3348f18 Happy New Year added
+* | a21267f readme at katas5 added
+|/
+* 7828f43 adding logs at kata 4
+* da6c5b3 greetings updated
+* 403154e Logs at Kata3 added
+* 1854d16 logs added
+* 1d4225c Name Added
+* 69b964a Logs added
+* 9566680 Final Commit
+* fcaac81 File Added
+* ff9ae86 adding logs
+* d93f432 hello world again commit
+* c9667ed Hello world again Commit
+* 97fe2e2 First Commit
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/katas6_merge_conflict (master)
+$ git branch -d addimple
+Deleted branch addimple (was 05144d7).
