@@ -1,0 +1,377 @@
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (m
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (m
+$ git remote -v
+origin  https://github.com/thesuraj-zemoso/git-katas (fetch)
+origin  https://github.com/thesuraj-zemoso/git-katas (push) 
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (m
+$ git add .
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (m
+$ git commit -m "File Added"
+[master fcaac81] File Added
+ 1 file changed, 1 insertion(+)
+ create mode 100644 kata2-basic-staging/file.txt
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (m
+$ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 352 bytes | 352.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/thesuraj-zemoso/git-katas
+   ff9ae86..fcaac81  master -> master
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (m
+$ git pull origin master
+From https://github.com/thesuraj-zemoso/git-katas
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (m
+$ echo 2 > file.txt
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (m
+$ cd kata2-basic-staging
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/ka
+$ echo 2 > file.txt
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/ka
+$ git diff
+warning: LF will be replaced by CRLF in kata2-basic-staging/file.txt.
++++ b/kata2-basic-staging/file.txt
+@@ -1 +1 @@
+-Some text here
+\ No newline at end of file
++2
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata2-basic-staging (master)
+$ git diff --staged
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata2-basic-staging (master)
+$ git add file.txt
+warning: LF will be replaced by CRLF in kata2-basic-staging/file.txt. 
+The file will have its original line endings in your working directory
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata2-basic-staging (master)
+$ git diff
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata2-basic-staging (master)
+$ git diff --staged
+diff --git a/kata2-basic-staging/file.txt b/kata2-basic-staging/file.txt
+index 6baeab4..0cfbf08 100644
+--- a/kata2-basic-staging/file.txt
++++ b/kata2-basic-staging/file.txt
+@@ -1 +1 @@
+-Some text here
+\ No newline at end of file
++2
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata2-basic-staging (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   file.txt
+
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata2-basic-staging (master)
+$ git restore --staged file.txt
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata2-basic-staging (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata2-basic-staging (master)
+$ git add .
+warning: LF will be replaced by CRLF in kata2-basic-staging/file.txt.
+The file will have its original line endings in your working directory
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata2-basic-staging (master)
+$ git logs
+git: 'logs' is not a git command. See 'git --help'.
+
+The most similar command is
+        log
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata2-basic-staging (master)
+$ git log
+commit fcaac8131660e8b58511ed665a47ea01df3bd2da (HEAD -> master, origin/master)
+Author: thesuraj-zemoso <suraj.kumar@zemosolabs.com>
+Date:   Tue Jan 4 20:36:54 2022 +0530
+
+    File Added
+
+commit ff9ae863076bf677fe47db2a5ed8177ae9e00449
+Author: thesuraj-zemoso <suraj.kumar@zemosolabs.com>
+Date:   Tue Jan 4 20:27:06 2022 +0530
+
+    adding logs
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata2-basic-staging (master)
+$ echo 4 > file.txt
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata2-basic-staging (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   file.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file.txt
+
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata2-basic-staging (master)
+$ git restore file.txt
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata2-basic-staging (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   file.txt
+
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata2-basic-staging (master)
+$ git add .
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata2-basic-staging (master)
+$ git commit -m "Final Commit"
+[master 9566680] Final Commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata2-basic-staging (master)
+$ git push origin master
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 307 bytes | 153.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/thesuraj-zemoso/git-katas
+   fcaac81..9566680  master -> master
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata2-basic-staging (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ../kata1-basic commits/logs.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata2-basic-staging (master)
+$ cd ..
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (master)
+$ git add .
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (master)
+$ git commit -m "Logs added"
+[master 69b964a] Logs added
+ 2 files changed, 415 insertions(+)
+ create mode 100644 kata2-basic-staging/logs.txt
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (master)
+$ git push origin master
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 2.66 KiB | 907.00 KiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0), pack-reused 0
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (master)
+$ ls
+'kata1-basic commits'/   kata2-basic-staging/   kata3_basic_branching/
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (master)
+$ cd kata3_basic_branching
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching (master)
+$ git branch
+* master
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching (master)
+$ git branch mybranch
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching (master)
+$ git branch
+* master
+  mybranch
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching (master)
+$ git switch mybranch
+Switched to branch 'mybranch'
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching (mybranch)
+$ git status
+On branch mybranch
+nothing to commit, working tree clean
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching (mybranch)
+$ echo 7 > file1.txt
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching (mybranch)
+$ ls
+file1.txt
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching (mybranch)
+$ git add file1.txt
+warning: LF will be replaced by CRLF in kata3_basic_branching/file1.txt.
+The file will have its original line endings in your working directory
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching (mybranch)
+$ echo Suraj Kumar > file1.txt
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching (mybranch)
+$ git status
+On branch mybranch
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   file1.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file1.txt
+
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching (mybranch)
+$ git add file1.txt
+warning: LF will be replaced by CRLF in kata3_basic_branching/file1.txt.
+The file will have its original line endings in your working directory
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching (mybranch)
+$ git commit -m "Name Added"
+[mybranch 1d4225c] Name Added
+ 1 file changed, 1 insertion(+)
+ create mode 100644 kata3_basic_branching/file1.txt
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching (mybranch)
+$ git log --oneline --graph
+* 1d4225c (HEAD -> mybranch) Name Added
+* 69b964a (origin/master, master) Logs added
+* 9566680 Final Commit
+* fcaac81 File Added
+* ff9ae86 adding logs
+* d93f432 hello world again commit
+* c9667ed Hello world again Commit
+* 97fe2e2 First Commit
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching (mybranch)
+$ git switch master
+Switched to branch 'master'
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching
+$ git log --oneline --graph
+fatal: failed to stat 'C:/Users/suraj/Documents/Zemoso Learning/git-katas/kata3_basic_branching': No such file or directory
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching
+$ ls
+ls: cannot open directory '.': No such file or directory
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching
+$ cd ..
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (master)
+$ git logs
+git: 'logs' is not a git command. See 'git --help'.
+
+The most similar command is
+        log
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (master)
+$ git log
+commit 69b964a436f55aee327fb8a8a190f3dddcdb1e8c (HEAD -> master, origin/master)
+Author: thesuraj-zemoso <suraj.kumar@zemosolabs.com>
+Date:   Wed Jan 5 08:29:03 2022 +0530
+
+    Logs added
+
+commit 9566680b55fc62626771a24e10ccc1d119de15e5
+Author: thesuraj-zemoso <suraj.kumar@zemosolabs.com>
+Date:   Wed Jan 5 08:27:06 2022 +0530
+
+    Final Commit
+
+commit fcaac8131660e8b58511ed665a47ea01df3bd2da
+Author: thesuraj-zemoso <suraj.kumar@zemosolabs.com>
+Date:   Tue Jan 4 20:36:54 2022 +0530
+
+    File Added
+
+commit ff9ae863076bf677fe47db2a5ed8177ae9e00449
+Author: thesuraj-zemoso <suraj.kumar@zemosolabs.com>
+Date:   Tue Jan 4 20:27:06 2022 +0530
+
+    adding logs
+
+commit d93f43235ca8c565a7d36862bcbd6b4c7f76ef7c
+Author: thesuraj-zemoso <suraj.kumar@zemosolabs.com>
+Date:   Tue Jan 4 20:25:33 2022 +0530
+
+    hello world again commit
+
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (master)
+$ ls
+'kata1-basic commits'/   kata2-basic-staging/   kata3_basic_branching/
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (master)
+$ cd kata3_basic_branching
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching (master)
+$ ls
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching (master)
+$ git branch -a
+* master
+  mybranch
+  remotes/origin/master
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching (master)
+$ echo "Suraj Kumar" > file2.txt
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching (master)
+$ git log --oneline --graph --all
+* 1d4225c (mybranch) Name Added
+* 69b964a (HEAD -> master, origin/master) Logs added
+* 9566680 Final Commit
+* fcaac81 File Added
+* ff9ae86 adding logs
+* d93f432 hello world again commit
+* c9667ed Hello world again Commit
+* 97fe2e2 First Commit
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching (master)
+$ git switch mybranch
+Switched to branch 'mybranch'
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching (mybranch)
+$ git diff mybranch master
+diff --git a/kata3_basic_branching/file1.txt b/kata3_basic_branching/file1.txt
+deleted file mode 100644
+index 78e6bf4..0000000
+--- a/kata3_basic_branching/file1.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-Suraj Kumar
