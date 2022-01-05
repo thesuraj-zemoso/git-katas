@@ -375,3 +375,322 @@ index 78e6bf4..0000000
 +++ /dev/null
 @@ -1 +0,0 @@
 -Suraj Kumar
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching (mybranch)
+$ git add .
+warning: LF will be replaced by CRLF in kata3_basic_branching/file2.txt.
+The file will have its original line endings in your working directory  
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching (mybranch)
+$ git commit -m "logs added"
+[mybranch 1854d16] logs added
+ 3 files changed, 378 insertions(+)
+ create mode 100644 kata3_basic_branching/doubt.png
+ create mode 100644 kata3_basic_branching/file2.txt
+ create mode 100644 kata3_basic_branching/logs.txt 
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching (mybranch)
+$ git push origin master
+Everything up-to-date
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching (mybranch)
+$ ls
+doubt.png  file1.txt  file2.txt  logs.txt
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching (mybranch)
+$ git swicth master
+git: 'swicth' is not a git command. See 'git --help'.
+
+The most similar command is
+        switch
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching (mybranch)
+$ git switch master
+Switched to branch 'master'
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching
+$ git add .
+fatal: failed to stat 'C:/Users/suraj/Documents/Zemoso Learning/git-katas/kata3_basic_branching': No such file or directory
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas/kata3_basic_branching
+$ cd ..
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (master)
+$ git swicth mybranch
+git: 'swicth' is not a git command. See 'git --help'.
+
+The most similar command is
+        switch
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (master)
+$ git switch mybranch
+Switched to branch 'mybranch'
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (mybranch)
+$ git add .
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (mybranch)
+$ git status
+On branch mybranch
+nothing to commit, working tree clean
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (mybranch)
+$ git logs
+git: 'logs' is not a git command. See 'git --help'.
+
+The most similar command is
+        log
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (mybranch)
+$ git log
+commit 1854d1691c7394df21016333e8837be046753337 (HEAD -> mybranch)
+Author: thesuraj-zemoso <suraj.kumar@zemosolabs.com>
+Date:   Wed Jan 5 08:55:46 2022 +0530
+
+    logs added
+
+commit 1d4225c8b7b99669231b129d84dfd868d24a0153
+Author: thesuraj-zemoso <suraj.kumar@zemosolabs.com>
+Date:   Wed Jan 5 08:36:09 2022 +0530
+
+    Name Added
+
+commit 69b964a436f55aee327fb8a8a190f3dddcdb1e8c (origin/master, master)
+Author: thesuraj-zemoso <suraj.kumar@zemosolabs.com>
+Date:   Wed Jan 5 08:29:03 2022 +0530
+
+    Logs added
+
+commit 9566680b55fc62626771a24e10ccc1d119de15e5
+Author: thesuraj-zemoso <suraj.kumar@zemosolabs.com>
+Date:   Wed Jan 5 08:27:06 2022 +0530
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (mybranch)
+$ git push origin mybranch
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (9/9), 120.37 KiB | 6.69 MiB/s, done.
+Total 9 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+remote: 
+remote: Create a pull request for 'mybranch' on GitHub by visiting:
+remote:      https://github.com/thesuraj-zemoso/git-katas/pull/new/mybranch
+remote:
+To https://github.com/thesuraj-zemoso/git-katas
+ * [new branch]      mybranch -> mybranch
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (mybranch)
+$ git branch --a
+error: ambiguous option: a (could be --abbrev or --all)
+usage: git branch [<options>] [-r | -a] [--merged] [--no-merged]
+   or: git branch [<options>] [-l] [-f] <branch-name> [<start-point>]
+   or: git branch [<options>] [-r] (-d | -D) <branch-name>...
+   or: git branch [<options>] (-m | -M) [<old-branch>] <new-branch>
+   or: git branch [<options>] (-c | -C) [<old-branch>] <new-branch>
+   or: git branch [<options>] [-r | -a] [--points-at]
+   or: git branch [<options>] [-r | -a] [--format]
+
+Generic options
+    -v, --verbose         show hash and subject, give twice for upstream branch
+    -q, --quiet           suppress informational messages
+    -t, --track           set up tracking mode (see git-pull(1))
+    -u, --set-upstream-to <upstream>
+                          change the upstream info
+    --unset-upstream      unset the upstream info
+    --color[=<when>]      use colored output
+    -r, --remotes         act on remote-tracking branches
+    --contains <commit>   print only branches that contain the commit
+    --no-contains <commit>
+                          print only branches that don't contain the commit
+    --abbrev[=<n>]        use <n> digits to display object names
+
+Specific git-branch actions:
+    -a, --all             list both remote-tracking and local branches
+    -d, --delete          delete fully merged branch
+    -D                    delete branch (even if not merged)
+    -m, --move            move/rename a branch and its reflog
+    -M                    move/rename a branch, even if target exists
+    -c, --copy            copy a branch and its reflog
+    -C                    copy a branch, even if target exists
+    -l, --list            list branch names
+    --show-current        show current branch name
+    --create-reflog       create the branch's reflog
+    --edit-description    edit the description for the branch
+    -f, --force           force creation, move/rename, deletion
+    --merged <commit>     print only branches that are merged
+    --no-merged <commit>  print only branches that are not merged
+    --column[=<style>]    list branches in columns
+    --sort <key>          field name to sort on
+    --points-at <object>  print only branches of the object
+    -i, --ignore-case     sorting and filtering are case insensitive
+    --format <format>     format to use for the output
+
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (mybranch)
+$ git branch -a
+  master
+* mybranch
+  remotes/origin/master
+  remotes/origin/mybranch
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (mybranch)
+$ git branch --mnerged
+error: unknown option `mnerged'
+usage: git branch [<options>] [-r | -a] [--merged] [--no-merged]
+   or: git branch [<options>] [-l] [-f] <branch-name> [<start-point>]
+   or: git branch [<options>] [-r] (-d | -D) <branch-name>...
+   or: git branch [<options>] (-m | -M) [<old-branch>] <new-branch>
+   or: git branch [<options>] (-c | -C) [<old-branch>] <new-branch>
+   or: git branch [<options>] [-r | -a] [--points-at]
+   or: git branch [<options>] [-r | -a] [--format]
+
+Generic options
+    -v, --verbose         show hash and subject, give twice for upstream branch
+    -q, --quiet           suppress informational messages
+    -t, --track           set up tracking mode (see git-pull(1))
+    -u, --set-upstream-to <upstream>
+                          change the upstream info
+    --unset-upstream      unset the upstream info
+    --color[=<when>]      use colored output
+    -r, --remotes         act on remote-tracking branches
+    --contains <commit>   print only branches that contain the commit
+    --no-contains <commit>
+                          print only branches that don't contain the commit
+    --abbrev[=<n>]        use <n> digits to display object names
+
+Specific git-branch actions:
+    -a, --all             list both remote-tracking and local branches
+    -d, --delete          delete fully merged branch
+    -D                    delete branch (even if not merged)
+    -m, --move            move/rename a branch and its reflog
+    -M                    move/rename a branch, even if target exists
+    -c, --copy            copy a branch and its reflog
+    -C                    copy a branch, even if target exists
+    -l, --list            list branch names
+    --show-current        show current branch name
+    --create-reflog       create the branch's reflog
+    --edit-description    edit the description for the branch
+    -f, --force           force creation, move/rename, deletion
+    --merged <commit>     print only branches that are merged
+    --no-merged <commit>  print only branches that are not merged
+    --column[=<style>]    list branches in columns
+    --sort <key>          field name to sort on
+    --points-at <object>  print only branches of the object
+    -i, --ignore-case     sorting and filtering are case insensitive
+    --format <format>     format to use for the output
+
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (mybranch)
+$ git branch -mnerged
+error: unknown switch `n'
+usage: git branch [<options>] [-r | -a] [--merged] [--no-merged]
+   or: git branch [<options>] [-l] [-f] <branch-name> [<start-point>]
+   or: git branch [<options>] [-r] (-d | -D) <branch-name>...
+   or: git branch [<options>] (-m | -M) [<old-branch>] <new-branch>
+   or: git branch [<options>] (-c | -C) [<old-branch>] <new-branch>
+   or: git branch [<options>] [-r | -a] [--points-at]
+   or: git branch [<options>] [-r | -a] [--format]
+
+Generic options
+    -v, --verbose         show hash and subject, give twice for upstream branch
+    -q, --quiet           suppress informational messages
+    -t, --track           set up tracking mode (see git-pull(1))
+    -u, --set-upstream-to <upstream>
+                          change the upstream info
+    --unset-upstream      unset the upstream info
+    --color[=<when>]      use colored output
+    -r, --remotes         act on remote-tracking branches
+    --contains <commit>   print only branches that contain the commit
+    --no-contains <commit>
+                          print only branches that don't contain the commit
+    --abbrev[=<n>]        use <n> digits to display object names
+
+Specific git-branch actions:
+    -a, --all             list both remote-tracking and local branches
+    -d, --delete          delete fully merged branch
+    -D                    delete branch (even if not merged)
+    -m, --move            move/rename a branch and its reflog
+    -M                    move/rename a branch, even if target exists
+    -c, --copy            copy a branch and its reflog
+    -C                    copy a branch, even if target exists
+    -l, --list            list branch names
+    --show-current        show current branch name
+    --create-reflog       create the branch's reflog
+    --edit-description    edit the description for the branch
+    -f, --force           force creation, move/rename, deletion
+    --merged <commit>     print only branches that are merged
+    --no-merged <commit>  print only branches that are not merged
+    --column[=<style>]    list branches in columns
+    --sort <key>          field name to sort on
+    --points-at <object>  print only branches of the object
+    -i, --ignore-case     sorting and filtering are case insensitive
+    --format <format>     format to use for the output
+
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (mybranch)
+$ git branch --merged
+  master
+* mybranch
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (mybranch)
+$ git merge mybranch
+Already up to date.
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (mybranch)
+$ git branch --merged
+  master
+* mybranch
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (mybranch)
+$ git push origin master
+Everything up-to-date
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (mybranch)
+$ git checkout master
+Switched to branch 'master'
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (master)
+$ git branch --merged
+* master
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (master)
+$ git branch -a
+* master
+  mybranch
+  remotes/origin/master
+  remotes/origin/mybranch
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (master)
+$ git merge mybranch
+Updating 69b964a..1854d16
+Fast-forward
+ kata3_basic_branching/doubt.png | Bin 0 -> 130111 bytes
+ kata3_basic_branching/file1.txt |   1 +
+ kata3_basic_branching/file2.txt |   1 +
+ kata3_basic_branching/logs.txt  | 377 ++++++++++++++++++++++++++++++++++++++++
+ 4 files changed, 379 insertions(+)
+ create mode 100644 kata3_basic_branching/doubt.png
+ create mode 100644 kata3_basic_branching/file1.txt
+ create mode 100644 kata3_basic_branching/file2.txt
+ create mode 100644 kata3_basic_branching/logs.txt
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (master)
+$ git branch --merged
+* master
+  mybranch
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (master)
+$ git push origin master
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/thesuraj-zemoso/git-katas
+   69b964a..1854d16  master -> master
+
+suraj@DESKTOP-0HOBOQJ MINGW64 ~/Documents/Zemoso Learning/git-katas (master)
+$
